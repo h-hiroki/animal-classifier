@@ -1,2 +1,8 @@
 
 animalai/.env
+animalai/boar
+animalai/crow
+animalai/monkey
+
+.DS_Store
+.vscode/settings.json

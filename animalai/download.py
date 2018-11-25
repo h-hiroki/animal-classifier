@@ -21,13 +21,22 @@ savedir = "./" + animal_name
 
 flickr = FlickrAPI(API_KEY, API_SECRET, format='parsed-json')
 result = flickr.photos.search(
-	text = animal_name,
-	per_page = 400,
-	media = 'phptos',
-	sort = 'relevance',
-	safe_search = 1,
-	extras = 'url_q, licence'
+    text = animal_name,
+    per_page = 400,
+    media = 'phptos',
+    sort = 'relevance',
+    safe_search = 1,
+    extras = 'url_q, licence'
 )
 
 photos = result['photos']
-pprint(photos)
+# スクレイピング結果確認用
+# pprint(photos)
+
+for i, photo in enumerate(photos['photo']):
+    url_q = photo['url_q']
+    filepath = savedir + '/' + photo['id'] + 'jpg'
+    if os.path.exists(filepath): continue
+    urlretrieve(url_q, filepath)
+    time.sleep(WAIT_TIME)
+
