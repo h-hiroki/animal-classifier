@@ -3,3 +3,5 @@
 以下を`pip install`している
 - flickrapi
 - python-dotenv
+- pillow
+- sklearn
