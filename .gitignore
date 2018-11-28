@@ -6,3 +6,4 @@ animalai/monkey
 
 .DS_Store
 .vscode/settings.json
+animalai/.vscode/settings.json
